@@ -49,26 +49,25 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 24px;
+  gap: 72px 24px;
+  padding-top: 64px;
 }
 
 .card {
   box-sizing: border-box;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
   margin: 0;
-  padding: 24px 16px 20px;
+  padding: 72px 16px 20px;
   background-color: #ffffff;
   border: 1px solid var(--color-border);
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: var(--shadow-card);
   color: inherit;
   text-decoration: none;
-  position: relative;
-  top: auto;
-  overflow: visible;
+  text-align: center;
 }
 
 .card:hover {
@@ -77,40 +76,33 @@
 }
 
 .cover {
-  box-sizing: border-box;
+  position: absolute;
+  top: -64px;
+  left: 50%;
+  transform: translateX(-50%);
   display: block;
   width: 128px;
   height: 128px;
   margin: 0;
-  padding: 0;
-  border: 0;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
   background: #eee;
-  position: static;
-  top: auto;
-  left: auto;
-  right: auto;
-  bottom: auto;
-  transform: none;
-  flex: 0 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .title {
-  margin: 0;
+  margin: 0 0 8px;
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.35;
   color: var(--color-text);
-  text-align: center;
 }
 
 .author {
   margin: 0;
   color: var(--color-muted);
   font-size: 0.9rem;
-  text-align: center;
 }
 
 .author::before {
