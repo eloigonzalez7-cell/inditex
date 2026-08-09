@@ -46,7 +46,7 @@ const detailFixture = {
 };
 
 async function mockApis(page: import('@playwright/test').Page) {
-  await page.route('**/api.allorigins.win/**', async (route) => {
+  const fulfill = async (route: import('@playwright/test').Route) => {
     const url = decodeURIComponent(route.request().url());
     if (url.includes('toppodcasts')) {
       await route.fulfill({
@@ -65,7 +65,11 @@ async function mockApis(page: import('@playwright/test').Page) {
       return;
     }
     await route.fallback();
-  });
+  };
+
+  await page.route('**/api.allorigins.win/**', fulfill);
+  await page.route('**/itunes-proxy/**', fulfill);
+  await page.route('**/corsproxy.io/**', fulfill);
 }
 
 test('home filters podcasts and opens detail', async ({ page }) => {

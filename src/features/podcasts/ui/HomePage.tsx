@@ -74,7 +74,9 @@ export function HomePage() {
               className={styles.card}
               data-testid="podcast-card"
             >
-              <img src={podcast.imageUrl} alt="" className={styles.cover} />
+              <div className={styles.coverWrap}>
+                <img src={podcast.imageUrl} alt="" className={styles.cover} />
+              </div>
               <h2 className={styles.title}>{podcast.title}</h2>
               <p className={styles.author}>{podcast.author}</p>
             </Link>

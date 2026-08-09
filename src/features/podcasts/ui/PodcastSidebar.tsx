@@ -35,7 +35,9 @@ export function PodcastSidebar({ podcast, linkToPodcast = false }: PodcastSideba
       </div>
       <div className={styles.descriptionBlock}>
         <h3>Description:</h3>
-        <p className={styles.description}>{podcast.description}</p>
+        <p className={styles.description}>
+          {podcast.description.trim() || 'No description available.'}
+        </p>
       </div>
     </aside>
   );

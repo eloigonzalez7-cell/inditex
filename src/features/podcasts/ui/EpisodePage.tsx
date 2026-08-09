@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import DOMPurify from 'dompurify';
 import { useParams } from 'react-router-dom';
 import { useNavigationBusy } from '@/app/NavigationBusy';
+import { toSafeHtml } from '@/shared/html/toSafeHtml';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import type { Episode } from '../domain/Episode';
 import type { Podcast } from '../domain/Podcast';
@@ -56,18 +57,24 @@ export function EpisodePage() {
     );
   }
 
-  const safeHtml = DOMPurify.sanitize(episode.descriptionHtml);
+  const safeHtml = DOMPurify.sanitize(toSafeHtml(episode.descriptionHtml));
 
   return (
     <div className={styles.layout}>
       <PodcastSidebar podcast={podcast} linkToPodcast />
       <section className={styles.main}>
         <h2 className={styles.title}>{episode.title}</h2>
-        <div
-          className={styles.description}
-          data-testid="episode-description"
-          dangerouslySetInnerHTML={{ __html: safeHtml }}
-        />
+        {safeHtml ? (
+          <div
+            className={styles.description}
+            data-testid="episode-description"
+            dangerouslySetInnerHTML={{ __html: safeHtml }}
+          />
+        ) : (
+          <p className={styles.description} data-testid="episode-description">
+            No description available for this episode.
+          </p>
+        )}
         <audio className={styles.audio} controls src={episode.audioUrl} preload="none">
           Your browser does not support the audio element.
         </audio>

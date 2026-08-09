@@ -78,12 +78,15 @@ export function mapPodcastDetail(payload: ItunesLookupResult, podcastId: string)
   const episodes = results
     .filter((r) => r.wrapperType === 'podcastEpisode' || r.kind === 'podcast-episode')
     .map((r) => {
-      const id = String(r.trackId ?? r.episodeGuid ?? crypto.randomUUID());
+      const id = String(r.trackId ?? r.episodeGuid ?? '');
+      const descriptionHtml = String(
+        r.description ?? r.shortDescription ?? r.closedCaptioning ?? '',
+      );
       return new Episode(
-        id,
+        id || String(r.episodeGuid ?? Math.random()),
         podcast.id,
         String(r.trackName ?? r.collectionName ?? 'Untitled episode'),
-        String(r.description ?? r.shortDescription ?? ''),
+        descriptionHtml,
         new Date(String(r.releaseDate ?? Date.now())),
         parseDurationMs(r.trackTimeMillis ?? r.duration),
         String(r.episodeUrl ?? r.previewUrl ?? ''),

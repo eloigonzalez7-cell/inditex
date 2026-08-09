@@ -1,7 +1,7 @@
 import type { CacheEntry, CacheStore } from '../../features/podcasts/domain/CacheStore';
 
 const DEFAULT_TTL_MS = 24 * 60 * 60 * 1000;
-const SCHEMA_VERSION = 'v1';
+const SCHEMA_VERSION = 'v2';
 
 export class LocalStorageCacheStore implements CacheStore {
   constructor(
