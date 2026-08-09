@@ -1,0 +1,10 @@
+if [ "$HUSKY_SKIP_CHANGELOG" = "1" ]; then
+  exit 0
+fi
+
+npx --no -- git-cliff -o CHANGELOG.md || exit 0
+
+if [ -n "$(git status --porcelain -- CHANGELOG.md)" ]; then
+  git add CHANGELOG.md
+  HUSKY=0 HUSKY_SKIP_CHANGELOG=1 git commit --amend --no-edit --no-verify
+fi
