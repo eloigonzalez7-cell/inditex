@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import DOMPurify from 'dompurify';
+import type { Config as DomPurifyConfig } from 'dompurify';
 import { useParams } from 'react-router-dom';
 import { useNavigationBusy } from '@/app/NavigationBusy';
 import { toSafeHtml } from '@/shared/html/toSafeHtml';
@@ -9,6 +10,12 @@ import type { Podcast } from '../domain/Podcast';
 import { podcastsContainer } from './container';
 import { PodcastSidebar } from './PodcastSidebar';
 import styles from './EpisodePage.module.css';
+
+const PURIFY_CONFIG: DomPurifyConfig = {
+  USE_PROFILES: { html: true },
+  ADD_ATTR: ['target', 'rel'],
+  ALLOW_DATA_ATTR: false,
+};
 
 export function EpisodePage() {
   const { podcastId = '', episodeId = '' } = useParams();
@@ -48,6 +55,13 @@ export function EpisodePage() {
     return () => controller.abort();
   }, [podcastId, episodeId, begin, end]);
 
+  const safeHtml = useMemo(() => {
+    if (!episode) {
+      return '';
+    }
+    return DOMPurify.sanitize(toSafeHtml(episode.descriptionHtml), PURIFY_CONFIG);
+  }, [episode]);
+
   if (loading || !podcast || !episode) {
     return (
       <div className={styles.layout}>
@@ -56,10 +70,6 @@ export function EpisodePage() {
       </div>
     );
   }
-
-  const safeHtml = DOMPurify.sanitize(toSafeHtml(episode.descriptionHtml), {
-    ADD_ATTR: ['target', 'rel'],
-  });
 
   return (
     <div className={styles.layout}>

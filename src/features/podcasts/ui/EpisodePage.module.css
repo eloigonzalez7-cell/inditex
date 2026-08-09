@@ -1,7 +1,7 @@
 .layout {
   display: flex;
   gap: 28px;
-  padding: 28px 32px 48px;
+  padding: 28px 0 48px;
   align-items: flex-start;
 }
 
@@ -27,8 +27,8 @@
 }
 
 .description {
-  color: var(--color-muted);
-  line-height: 1.55;
+  color: #444;
+  line-height: 1.6;
   margin-bottom: 24px;
   font-size: 0.95rem;
   overflow-wrap: anywhere;
@@ -38,13 +38,73 @@
 }
 
 .description p {
-  margin: 0 0 0.75em;
+  margin: 0 0 0.9em;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
 }
 
 .description a {
   color: var(--color-accent);
+  text-decoration: underline;
   overflow-wrap: anywhere;
   word-break: break-word;
+}
+
+.description ul,
+.description ol {
+  margin: 0 0 0.9em;
+  padding-left: 1.4em;
+}
+
+.description li {
+  margin-bottom: 0.35em;
+}
+
+.description h1,
+.description h2,
+.description h3,
+.description h4 {
+  margin: 0.4em 0 0.5em;
+  color: #222;
+  line-height: 1.3;
+}
+
+.description h1 {
+  font-size: 1.15rem;
+}
+
+.description h2 {
+  font-size: 1.08rem;
+}
+
+.description h3,
+.description h4 {
+  font-size: 1rem;
+}
+
+.description strong,
+.description b {
+  color: #222;
+}
+
+.description br {
+  line-height: 1.6;
+}
+
+.description img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.75em 0;
+}
+
+.description blockquote {
+  margin: 0 0 0.9em;
+  padding: 0.5em 0 0.5em 0.9em;
+  border-left: 3px solid #ddd;
+  color: #666;
 }
 
 .audio {
@@ -56,6 +116,6 @@
 @media (max-width: 800px) {
   .layout {
     flex-direction: column;
-    padding: 20px 16px 40px;
+    padding: 20px 0 40px;
   }
 }
