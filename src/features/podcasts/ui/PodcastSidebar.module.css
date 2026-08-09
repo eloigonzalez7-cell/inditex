@@ -6,6 +6,8 @@
   width: 100%;
   max-width: 260px;
   flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .imageWrap {
@@ -33,6 +35,8 @@
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.3;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .title a {
@@ -70,4 +74,13 @@
   font-size: 0.85rem;
   line-height: 1.45;
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    max-width: none;
+  }
 }
