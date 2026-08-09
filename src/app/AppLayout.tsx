@@ -20,7 +20,7 @@ export function AppLayout() {
   return (
     <NavigationBusyProvider>
       <Header />
-      <main>
+      <main className="shell">
         <Suspense fallback={<Skeleton height="240px" width="100%" />}>
           <Outlet />
         </Suspense>

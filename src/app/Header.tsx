@@ -7,12 +7,14 @@ export function Header() {
 
   return (
     <header className={styles.header}>
-      <Link to="/" className={styles.brand}>
-        Podcaster
-      </Link>
-      {isBusy ? (
-        <div className={styles.loader} data-testid="nav-loader" aria-label="Loading" />
-      ) : null}
+      <div className={styles.inner}>
+        <Link to="/" className={styles.brand}>
+          Podcaster
+        </Link>
+        {isBusy ? (
+          <div className={styles.loader} data-testid="nav-loader" aria-label="Loading" />
+        ) : null}
+      </div>
     </header>
   );
 }

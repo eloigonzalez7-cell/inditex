@@ -1,16 +1,18 @@
 :root {
-  --color-bg: #fafafa;
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
   --color-text: #222222;
-  --color-muted: #6b6b6b;
-  --color-border: #e0e0e0;
+  --color-muted: #777777;
+  --color-border: #e6e6e6;
   --color-accent: #0085d1;
   --color-header: #ffffff;
-  --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.14), 0 1px 2px rgba(0, 0, 0, 0.08);
-  --shadow-header: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.12);
+  --shadow-header: none;
   --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --header-height: 64px;
-  --page-max: 1200px;
+  --header-height: 56px;
+  --page-max: 1100px;
+  --page-gutter: 40px;
+  --cover-size: 100px;
 }
 
 *,
@@ -47,7 +49,9 @@ input {
   font: inherit;
 }
 
-main {
+.shell {
   max-width: var(--page-max);
   margin: 0 auto;
+  padding: 0 var(--page-gutter);
+  width: 100%;
 }
