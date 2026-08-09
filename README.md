@@ -1,6 +1,6 @@
 # Inditex Podcast Player
 
-[![CI](https://github.com/OWNER/inditex-podcast-player/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/inditex-podcast-player/actions/workflows/ci.yml)
+[![CI](https://github.com/eloigonzalez7-cell/inditex/actions/workflows/ci.yml/badge.svg)](https://github.com/eloigonzalez7-cell/inditex/actions/workflows/ci.yml)
 [![coverage](https://img.shields.io/badge/coverage-unit%20tests-informational)](./coverage/lcov-report/index.html)
 
 Single-page application to browse Apple's top music podcasts, inspect podcast details, and play episodes. Built for the Inditex frontend technical challenge.
