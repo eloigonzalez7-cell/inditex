@@ -1,0 +1,13 @@
+No usar create-react-app o similar. Quieren ver que sabes configurar desde cero un proyecto. En su caso, suelen usar webpack, por lo que si está con ello mejor.
+
+Se valora Usar arquitectura hexagonal o conceptos de esta como manejar la orientación a objetos, clases, dominios, introducir estos conceptos de hexagonal en Front, en la medida de lo posible. Algo como orientar la prueba a features y en cada feature sus modelos, servicios y pantallas separado.
+
+Usar typescript, ya que a la persona que te evaluará le gusta bastante.
+
+Sobre css, si puedes no usar ninguna librería y picar el css nativo, mejor.
+
+Muy importante, tener tests unitarios y si puede ser de e2e (Jest, cypress…)
+
+Que en el readme quede bastante claro como levantar el proyecto, comandos disponibles, versiones mínimas, etc…. Es importante que esté explicado todo.
+
+Código funcionando y dejarlo a poder ser en un repo “abierto” en Github, Gitlab, Bitbucket.
