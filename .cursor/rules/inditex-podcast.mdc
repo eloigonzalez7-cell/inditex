@@ -1,0 +1,35 @@
+---
+description: Inditex podcast SPA project conventions
+globs:
+  - "**/*"
+---
+
+# Inditex Podcast Player — Cursor Rules
+
+## Stack
+
+- React + TypeScript (strict), Webpack 5, React Router (no hash routing)
+- Native CSS only — no Tailwind, MUI, Bootstrap, or CSS-in-JS libraries
+- Vitest + Testing Library for unit tests; Playwright for e2e
+- Feature-oriented hexagonal architecture under `src/features/podcasts`
+
+## Architecture boundaries
+
+- `domain/` — models, value objects, ports (interfaces). No React, no fetch.
+- `application/` — use cases. Depend on ports only.
+- `infrastructure/` — iTunes API, AllOrigins proxy, localStorage cache, AbortController
+- `ui/` — pages, components, hooks. Call use cases, never Apple URLs directly.
+
+## Commits
+
+- Conventional Commits in **English**: `type(scope): subject`
+- Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `perf`, `ci`, `build`
+- Prefer small commits; reference backlog IDs when relevant (`Refs E2`)
+
+## Quality bar
+
+- Cache top podcasts and podcast details for 24 hours in localStorage
+- Sanitize episode HTML with DOMPurify
+- Cancel in-flight requests with AbortController on navigation
+- Log errors to the browser console only (no user-facing error UI required)
+- Keep README and docs in English
