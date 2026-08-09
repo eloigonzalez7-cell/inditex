@@ -86,6 +86,7 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [docs/DECISIONS.md](docs/DE
 | [docs/BACKLOG.md](docs/BACKLOG.md) | Simulated Jira backlog |
 | [docs/ESTIMATIONS.md](docs/ESTIMATIONS.md) | Story points |
 | [docs/SPRINT_PLAN.md](docs/SPRINT_PLAN.md) | Milestones |
+| [docs/PROJECT_BOARD.md](docs/PROJECT_BOARD.md) | Jira-style board + GitHub sync |
 | [docs/COMMIT_GUIDE.md](docs/COMMIT_GUIDE.md) | Conventional Commits + Cursor Pro |
 | [CHANGELOG.md](CHANGELOG.md) | Generated changelog |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution guidelines |
