@@ -1,5 +1,9 @@
 # Project board (Jira simulation)
 
+Live board: https://github.com/users/eloigonzalez7-cell/projects/1
+
+Issues: https://github.com/eloigonzalez7-cell/inditex/issues
+
 Kanban snapshot for https://github.com/eloigonzalez7-cell/inditex
 
 Statuses mirror a classic delivery board. Story points live in [ESTIMATIONS.md](ESTIMATIONS.md).
