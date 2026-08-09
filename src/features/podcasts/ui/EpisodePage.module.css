@@ -1,7 +1,7 @@
 .layout {
   display: flex;
-  gap: 24px;
-  padding: 24px;
+  gap: 28px;
+  padding: 28px 32px 48px;
   align-items: flex-start;
 }
 
@@ -11,18 +11,26 @@
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
-  padding: 20px;
+  padding: 24px;
 }
 
 .title {
   margin: 0 0 16px;
-  font-size: 1.25rem;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .description {
   color: var(--color-muted);
-  line-height: 1.5;
-  margin-bottom: 20px;
+  line-height: 1.55;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.description p {
+  margin: 0 0 0.75em;
 }
 
 .description a {
@@ -31,4 +39,5 @@
 
 .audio {
   width: 100%;
+  margin-top: 8px;
 }

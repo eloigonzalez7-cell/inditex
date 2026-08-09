@@ -76,7 +76,7 @@ export function HomePage() {
             >
               <img src={podcast.imageUrl} alt="" className={styles.cover} />
               <h2 className={styles.title}>{podcast.title}</h2>
-              <p className={styles.author}>Author: {podcast.author}</p>
+              <p className={styles.author}>{podcast.author}</p>
             </Link>
           ))}
         </div>

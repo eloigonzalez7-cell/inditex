@@ -1,7 +1,7 @@
 .layout {
   display: flex;
-  gap: 24px;
-  padding: 24px;
+  gap: 28px;
+  padding: 28px 32px 48px;
   align-items: flex-start;
 }
 
@@ -10,7 +10,7 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .countCard,
@@ -18,12 +18,13 @@
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
-  padding: 16px;
+  padding: 18px 20px;
 }
 
 .countCard h2 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
 }
 
 .tableCard table {
@@ -34,19 +35,35 @@
 .tableCard th,
 .tableCard td {
   text-align: left;
-  padding: 10px 8px;
+  padding: 12px 10px;
   border-bottom: 1px solid var(--color-border);
   vertical-align: top;
+  font-size: 0.95rem;
+}
+
+.tableCard tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .tableCard th {
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--color-text);
 }
 
 .tableCard th:nth-child(2),
-.tableCard td:nth-child(2),
+.tableCard td:nth-child(2) {
+  width: 110px;
+  white-space: nowrap;
+  color: var(--color-muted);
+}
+
 .tableCard th:nth-child(3),
 .tableCard td:nth-child(3) {
-  width: 120px;
+  width: 100px;
   white-space: nowrap;
+  color: var(--color-muted);
+}
+
+.tableCard td a {
+  font-weight: 500;
 }
