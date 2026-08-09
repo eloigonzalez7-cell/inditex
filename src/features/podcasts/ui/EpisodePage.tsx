@@ -57,7 +57,9 @@ export function EpisodePage() {
     );
   }
 
-  const safeHtml = DOMPurify.sanitize(toSafeHtml(episode.descriptionHtml));
+  const safeHtml = DOMPurify.sanitize(toSafeHtml(episode.descriptionHtml), {
+    ADD_ATTR: ['target', 'rel'],
+  });
 
   return (
     <div className={styles.layout}>

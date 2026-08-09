@@ -8,6 +8,22 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 20px 16px 40px;
+  }
+
+  .toolbar {
+    justify-content: stretch;
+  }
+
+  .filter {
+    width: 100%;
+    flex: 1;
+  }
 }
 
 .badge {
